@@ -88,11 +88,9 @@ async function tryCreateGallery(searchQuery, page) {
 }
 async function loadMoreFn(event) {
   page += 1;
-  console.log(totalImage);
   await tryCreateGallery(searchQuery, page);
   const liEl = document.querySelector('.gallery .gallery-item');
   const liElResult = liEl.getBoundingClientRect();
-  console.log(liElResult);
   const liHight = liElResult.height * 2;
   console.log('🚀 ~ loadMoreFn ~ liHight:', liHight);
 
